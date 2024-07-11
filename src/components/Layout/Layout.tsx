@@ -30,7 +30,7 @@ export default function Layout({}: LayoutProps) {
 	useEffect(()=>{
 		socket.onmessage = function (event) {
 			let data = event.data;
-			alert(data)
+	
 			console.log(data)
 			data = JSON.parse(data);
 			if (data.eventname == 'ping') {
