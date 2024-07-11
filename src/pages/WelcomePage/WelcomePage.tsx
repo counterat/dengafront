@@ -18,7 +18,11 @@ export default function WelcomePage() {
 		invitCode = Number(window.location.pathname.split('/')[1]);
 	}
 	const handleConnectWallet = () => {
-		navigate('/money');
+		if (ton.connected){
+		navigate('/money');}
+		else{
+			ton.openModal()
+		}
 	};
 	const fetchAuthorization = async (initdata: string, invcitCode: number) => {
 		try {
