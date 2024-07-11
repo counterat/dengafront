@@ -1,0 +1,21 @@
+.layout {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	max-width: 450px;
+	width: 100%;
+	margin: 0 auto;
+	height: 100vh;
+	gap: 20px;
+	background: #fff;
+
+	.header {
+		display: block;
+		width: 50%;
+	}
+	.main {
+		position: relative;
+	}
+}

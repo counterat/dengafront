@@ -1,0 +1,51 @@
+.welcome {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+	padding: 0 20px;
+	&__text {
+		display: flex;
+		flex-direction: column;
+		font-family: 'HTC';
+		text-transform: uppercase;
+		max-width: 350px;
+		width: 100%;
+		font-weight: 600;
+		&_blue {
+			color: rgb(1, 181, 255);
+			font-size: 25px;
+		}
+		&_green {
+			color: rgb(40, 140, 35);
+		}
+		&_red {
+			color: rgb(238, 82, 137);
+		}
+	}
+	&__title {
+		font-size: 36px;
+		font-weight: 600;
+		text-align: center;
+	}
+	&__textImage {
+		width: 80%;
+	}
+	&__list {
+		&_top {
+			padding-left: 15px;
+			font-size: 18px;
+		}
+		&_bottom {
+			padding-left: 15px;
+			font-size: 14px;
+		}
+	}
+	&__button {
+		transition: scale 0.1s linear;
+
+		&:active {
+			scale: 0.9;
+		}
+	}
+}

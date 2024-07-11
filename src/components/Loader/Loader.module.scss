@@ -1,0 +1,21 @@
+.loader {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	aspect-ratio: 1 / 1;
+	animation: rotate infinite 3s linear;
+	img {
+		width: 100px;
+		height: 100px;
+	}
+}
+
+@keyframes rotate {
+	0% {
+		rotate: 0deg;
+	}
+	100% {
+		rotate: 360deg;
+	}
+}

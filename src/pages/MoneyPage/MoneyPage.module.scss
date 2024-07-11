@@ -1,0 +1,41 @@
+.money {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+	padding: 20px 25px;
+	background: #fff;
+
+	button,
+	a {
+		transition: scale 0.1s linear;
+		&:active {
+			scale: 0.95;
+		}
+	}
+	&__actions {
+		display: grid;
+		grid-template-columns: 2fr 1fr;
+		grid-template-rows: repeat(3, max-content);
+		gap: 10px;
+
+		&_give,
+		&_take {
+			grid-column: span 2;
+		}
+		&_count {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 36px;
+
+			font-family: 'Tagir';
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: contain;
+		}
+	}
+	&__smell {
+		width: 50%;
+	}
+}

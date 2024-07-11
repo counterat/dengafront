@@ -1,0 +1,15 @@
+.modal {
+	position: relative;
+
+	.invite {
+		position: absolute;
+		bottom: 60px;
+		left: 60px;
+		right: 60px;
+		transition: scale 0.1s;
+
+		&:active {
+			scale: 0.95;
+		}
+	}
+}
