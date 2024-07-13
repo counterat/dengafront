@@ -17,6 +17,7 @@ interface userDataType {
 	invited_by: number | null;
 	invite_link?: string;
 	wallet : string;
+	is_blocked_payment: false 
   }
   
 interface Props {
@@ -45,7 +46,8 @@ const initialState: Props = {
 			created_at: '', // или текущая дата в формате строки
 			invited_by: null,
 			invite_link: undefined,
-			wallet: ''
+			wallet: '',
+			is_blocked_payment: false
 		},
 		isGivenMoney: false,
 		isTakenMoney: false,

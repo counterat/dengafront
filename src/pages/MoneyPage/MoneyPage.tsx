@@ -111,9 +111,9 @@ const sendTrans = async ()=>{
 					onClick={() => {
 						sendTrans()
 					}}
-					disabled={Number( userData.balance_in_ton) > 0}
+					disabled={Number( userData.balance_in_ton) > 0 || userData.is_blocked_payment   }
 				>
-					{Number( userData.balance_in_ton) > 0 ? (
+					{Number( userData.balance_in_ton) > 0 || userData.is_blocked_payment  ? (
 						<img src="/assets/giveMoney_grey.png" alt="give money" />
 					) : (
 						<img src="/assets/giveMoney.png" alt="give money" />
