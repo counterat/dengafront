@@ -29,6 +29,17 @@ export default function MoneyPage() {
 		}
 	};
 
+	const waitingForPayment = async (userId:number, sign: string)=> {
+		try {
+			const result = await FetchUser.waiting_for_payment(userId, sign);
+
+			console.log('Authorization successful:', result);
+			return result;
+		} catch (error) {
+			console.error('Authorization failed:', error);
+		}
+	};
+
 	const reqPayout = async (userId:number, sign: string) => {
 		try {
 			const result = await FetchUser.request_payout(userId, sign);
@@ -65,7 +76,7 @@ export default function MoneyPage() {
 	const userData = useAppSelector(state=>state.user.user.data)
 	const links = {
 		path: userData.invite_link,
-		text: 'Hello world!',
+		text: "Деньга ждет ! переходи по моей ссылке, подключай кошелек и бесконечно умножай TON !",
 	};
 	
 	
@@ -84,6 +95,9 @@ const sendTrans = async ()=>{
        
       };
 	  await ton.sendTransaction(transaction).then(resp=>{
+		waitingForPayment(userData.id, userData.sign).then(json=>{
+			dispatch(setUser(json))
+		})
 		console.log(resp)
 		dispatch(setIsModalGiveMoney(true));
 		

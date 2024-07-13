@@ -51,6 +51,13 @@ export default function Layout({}: LayoutProps) {
 					console.log(userData)
 				}
 			}
+			if (data.eventname == 'unblock_payment'){
+				if (data.user.id == userData.id){
+					delete data.user.eventname
+					dispatch(setUser(data.user))
+					console.log(userData)
+				}
+			}
 			/* if (data.eventname == 'energy_replenishment'){
 				console.log('energy_replenishment')
 				console.log(data)
